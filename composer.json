@@ -1,0 +1,10 @@
+{
+  "name": "level27/magallanes",
+  "license": "",
+  "type": "project",
+  "description": "Level27 Magallanes scripts",
+  "require": {
+    "php": ">=5.3.9",
+    "andres-montanez/magallanes": "1.0.3"
+  }
+}
