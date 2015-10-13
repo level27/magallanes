@@ -1,0 +1,2 @@
+# magallanes
+Some Magallanes scripts
