@@ -7,8 +7,13 @@ class Level27Drush extends AbstractTask
 {
     public function getName()
     {
-        return 'Executing drush ' . $this->getParameter('params', false) . ' in ' . $this->getParameter('workingdir');
+        $str = 'Executing drush ' . $this->getParameter('params', false);
+        if (strlen($this->getParameter('workingdir')))
+            $str .= ' in ' . $this->getParameter('workingdir');
+
+        return $str;
     }
+
 
     public function run()
     {
