@@ -1,0 +1,27 @@
+# level27 standard config template for Magallanes
+deployment:
+  user: MANDATORY
+  from: ./
+  to: MANDATORY
+  excludes:
+    - app/cache/*
+    - web/bundles/*
+    - app/config/parameters.yml
+    - sites/default/settings.php
+  strategy: rsync
+releases:
+  enabled: true
+  max: 10
+  symlink: current
+  directory: releases
+hosts:
+ - MANDATORY
+tasks:
+  pre-deploy:
+  on-deploy:
+  post-release:
+  - level27-shared-files: {sharedfile: '/sites/default/settings.php'}
+  - level27-shared-files: {sharedfile: '/sites/default/files'}
+  - level27-drush: {params: 'cc all', workingdir: '/sites/default'}
+  post-deploy:
+
