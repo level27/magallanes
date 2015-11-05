@@ -2,7 +2,6 @@
 parameters:
     mailer_transport: smtp
     mailer_host: mail.level27.be
-    mailer_user:
-    mailer_password:
+    mailer_user: null
+    mailer_password: null
     kernel.secret: 'jygkjhgkj kjhg'
-    shared_folder: thisisatest
