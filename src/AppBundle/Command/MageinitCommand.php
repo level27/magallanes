@@ -48,7 +48,7 @@ class MageinitCommand extends ContainerAwareCommand
         $array = array(
             'name' => $input->getOption('name'),
             'email' => $input->getOption('email'),
-            'notifications' => 'true',
+            'notifications' => 'false',
             'logging' => 'true',
             'maxlogs' => '30',
             'ssh_needs_tty' => 'false'

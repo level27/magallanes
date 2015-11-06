@@ -18,7 +18,6 @@ hosts:
  - MANDATORY
 tasks:
   pre-deploy:
-  - level27-pre-deploy
   on-deploy:
   post-release:
   - level27-shared-files: {sharedfile: '/sites/default/settings.php'}
