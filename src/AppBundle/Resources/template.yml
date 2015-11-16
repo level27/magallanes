@@ -4,6 +4,7 @@ deployment:
   from: ./
   to: MANDATORY
   excludes:
+    - .mage/*
     - app/cache/*
     - web/bundles/*
     - app/config/parameters.yml
