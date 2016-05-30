@@ -27,20 +27,25 @@ class Level27SharedFiles extends AbstractTask
         $file = $sharedFolder . trim($sharedFile);
         $symlink = $currentFolder . trim($sharedFile);
 
-        if (file_exists($symlink) == true) {
-            echo "$symlink exists, renaming it";
-            $renamedsymlink = $symlink . '_RENAMED';
-//            if (strpos($symlink, '.') !== false) {
-//                $renamedsymlink = substr($symlink, 0, strpos($symlink, '.')) .
-//                    '_RENAMED.' .
-//                    substr($symlink, strpos($symlink, '.') + 1);
-//            }
-            $command = "mv $symlink $renamedsymlink";
-            $result = $this->runCommandRemote($command);
-        }
-        else {
-           echo "$symlink does not exist, which is ok";
-        }
+//        if (file_exists($symlink) == true) {
+//            echo "$symlink exists, renaming it";
+//            $renamedsymlink = $symlink . '_RENAMED';
+////            if (strpos($symlink, '.') !== false) {
+////                $renamedsymlink = substr($symlink, 0, strpos($symlink, '.')) .
+////                    '_RENAMED.' .
+////                    substr($symlink, strpos($symlink, '.') + 1);
+////            }
+//            $command = "mv $symlink $renamedsymlink";
+//            $result = $this->runCommandRemote($command);
+//        }
+//        else {
+//           echo "$symlink does not exist, which is ok";
+//        }
+
+        // rename the file if it exists remotely
+        $renamedsymlink = $symlink . '_RENAMED';
+        $command = "mv $symlink $renamedsymlink";
+        $result = $this->runCommandRemote($command);
 
         $command = "ln -s $file $symlink";
         $result = $this->runCommandRemote($command);
